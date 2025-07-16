@@ -39,7 +39,8 @@ test("adds a new item to the list when the form is submitted", () => {
     target: { value: "Dessert" },
   });
 
-  fireEvent.submit(screen.queryByText(/Add to List/));
+  screen.debug();
+  fireEvent.click(screen.getByText(/Add to List/i));
 
   expect(screen.queryByText(/Ice Cream/)).toBeInTheDocument();
 
